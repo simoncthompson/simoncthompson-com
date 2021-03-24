@@ -1,0 +1,65 @@
+body {
+  background-color: #F5F5F5;
+}
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+  color: #292B3D;
+}
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 20px;
+}
+p {
+  font-family: 'Georgia', serif;
+  font-size: 20px;
+}
+p {
+  color: #3D405B;
+}
+a {
+  color: #292B3D;
+}
+img {
+  border-radius: 50%;
+  max-width: 140px;
+}
+i {
+  font-size: 30px;
+  color: #3D405B;
+}
+i:hover {
+  color: black;
+}
+ul li {
+  display: inline-block;
+  margin: 10px;
+}
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+}
+.card {
+  display: block;
+  box-shadow: 3px 13px 30px 0px rgba(21, 34, 67, 0.1);
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+}
+.hero-card {
+  text-align: center;
+}
+.icons {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  max-width: 100px;
+}
+.fab {
+  padding: 10px;
+}
