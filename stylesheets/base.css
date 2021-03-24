@@ -1,9 +1,9 @@
 body {
   background-color: #F5F5F5;
-}
-h1, h2, h3 {
   font-family: 'Inter', sans-serif;
   color: #292B3D;
+}
+h1, h2, h3 {
 }
 h1 {
   font-size: 36px;
@@ -17,8 +17,7 @@ h3 {
 p {
   font-family: 'Georgia', serif;
   font-size: 20px;
-}
-p {
+  line-height: 35px;
   color: #3D405B;
 }
 a {
@@ -41,15 +40,15 @@ ul li {
 }
 .container {
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 900px;
 }
 .card {
   display: block;
   box-shadow: 3px 13px 30px 0px rgba(21, 34, 67, 0.1);
   border-radius: 10px;
   background-color: white;
-  padding: 20px;
-  margin: 20px;
+  padding: 20px 50px;
+  margin: 30px 20px;
 }
 .hero-card {
   text-align: center;
@@ -62,4 +61,23 @@ ul li {
 }
 .fab {
   padding: 10px;
+}
+table, th, td {
+  border: 3px solid lightgrey;
+  border-collapse: collapse;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: 'Courier';
+}
+
+.podcast {
+  text-decoration: none;
+  margin-bottom: 50px;
+}
+.podcast p {
+  font-family: 'Inter';
+  font-size: 18px;
+}
+.podcast p:hover, a:hover {
+  color: #626793;
 }
