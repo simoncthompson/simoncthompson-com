@@ -30,7 +30,7 @@ twitter_username: realsimont
 github_username:  simoncthompson
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
 
