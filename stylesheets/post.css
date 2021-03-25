@@ -1,5 +1,14 @@
 .post-container {
   margin: 0 auto;
   max-width: 700px;
+  padding: 10px 30px;
 }
 
+.post-container img {
+  width: 100%;
+}
+
+h2, h3, h4, h5 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}

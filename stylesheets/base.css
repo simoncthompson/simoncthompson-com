@@ -1,5 +1,5 @@
 body {
-  background-color: #F5F5F5;
+  background-color: #FBFBFB;
   font-family: 'Inter', sans-serif;
   color: #292B3D;
   margin: 0;
@@ -10,13 +10,13 @@ h1 {
   font-size: 36px;
 }
 h2 {
-  font-size: 28px;
+  font-size: 30px;
 }
 h3 {
   font-size: 20px;
 }
 p {
-  font-family: 'Georgia', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   line-height: 35px;
   color: #3D405B;
@@ -24,7 +24,7 @@ p {
 a {
   color: #292B3D;
 }
-img {
+.hero-card img {
   border-radius: 50%;
   max-width: 140px;
 }
@@ -67,14 +67,13 @@ table, th, td {
   font-family: 'Courier';
   font-size: 18px;
 }
-.podcast {
+.podcasts a {
   text-decoration: none;
   margin-bottom: 50px;
 }
-.podcast p {
-  font-family: 'Inter';
+.podcasts p {
   font-size: 18px;
 }
-.podcast p:hover, a:hover {
+.podcasts p:hover, a:hover {
   color: #626793;
 }
