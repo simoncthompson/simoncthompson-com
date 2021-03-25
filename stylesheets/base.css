@@ -2,6 +2,7 @@ body {
   background-color: #F5F5F5;
   font-family: 'Inter', sans-serif;
   color: #292B3D;
+  margin: 0;
 }
 h1, h2, h3 {
 }
@@ -27,17 +28,6 @@ img {
   border-radius: 50%;
   max-width: 140px;
 }
-i {
-  font-size: 30px;
-  color: #3D405B;
-}
-i:hover {
-  color: black;
-}
-ul li {
-  display: inline-block;
-  margin: 10px;
-}
 .container {
   margin: 0 auto;
   max-width: 900px;
@@ -62,6 +52,13 @@ ul li {
 .fab {
   padding: 10px;
 }
+.icons i {
+  font-size: 30px;
+  color: #3D405B;
+}
+.icons i:hover {
+  color: black;
+}
 table, th, td {
   border: 3px solid lightgrey;
   border-collapse: collapse;
@@ -70,7 +67,6 @@ table, th, td {
   font-family: 'Courier';
   font-size: 18px;
 }
-
 .podcast {
   text-decoration: none;
   margin-bottom: 50px;
