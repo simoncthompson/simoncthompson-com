@@ -67,6 +67,9 @@ table, th, td {
   font-family: 'Courier';
   font-size: 18px;
 }
+table {
+  margin-bottom: 20px;
+}
 .podcasts a {
   text-decoration: none;
   margin-bottom: 50px;
