@@ -12,3 +12,14 @@ h2, h3, h4, h5 {
   margin-top: 50px;
   margin-bottom: 30px;
 }
+code {
+  font-size: 20px;
+  font-family: 'Courier';
+  background-color: #3D405B;
+  color: white;
+  overflow-wrap: normal;
+  white-space: pre-wrap;
+}
+pre {
+  background-color: #3D405B;
+}

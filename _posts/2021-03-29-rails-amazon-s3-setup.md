@@ -22,15 +22,15 @@ The first thing you'll need to do is [create an AWS account](https://aws.amazon.
 
 Select S3 as your service in the search bar.
 
-![](https://lh5.googleusercontent.com/91Egfs5Uu5ybIKJgxH8iOt4fGNE_d9zRaUcGdQczFfgg9jvddgggosWQ9b9WPLsdnH8LvuUeIbhAUAFRingNZrMobcur3cTA37TpBubyietUamzXx6PQYYQhXBX2aBsY1iWwncya)
+![AWS search](/images/post-rails-amazon-s3-setup/aws-search.png)
 
 Click "Create bucket"
 
-![](https://lh5.googleusercontent.com/cTkRDpalebC94Q9SDU1m8w6KuFOsxG1V-gIk3YuCpdTHOvcdt4dUNYFLUYFko9sDhErHnNLUCBEb34UlJJ2ZPJaTppFdigfgXPy9ZwFYUzG5gMVvL6fbzrQAovKIZHGn8-q_hM7d)
+![AWS create bucket](/images/post-rails-amazon-s3-setup/aws-create-bucket.png)
 
 Give your bucket a name, and select a region. Note that the region you choose will have a slight effect on speed - the closer your user is to the bucket region, the faster the requests will be. So choose the region where you will have most users.
 
-![](https://lh5.googleusercontent.com/KIfPdHMsaZjG77TSxspVf3Procg_-woV1liKHivGS6juItyklTukFhcPBHrJ3aSCiX4XQVvOSVlDBIVmrJmIos_jdkslhPsBm4Ww1NlmAD3V49Au334czhxnkEg8me0J7TkqfWkV)
+![AWS create bucket form](/images/post-rails-amazon-s3-setup/aws-create-bucket-form.png)
 
 You can leave the rest of the settings as their defaults, including 'Block all public access' settings.
 
@@ -42,11 +42,11 @@ Ok - so we have our bucket, now we need to add our app as a "user", and assign a
 
 ### Create a new IAM policy
 
-![](https://lh3.googleusercontent.com/HkH3CP87i_z1ADCC8yKP9F94hC3XnO8Yhx9j47oMiDOaw0m-gTG8pjSnciLEgfgRb_WzbMKnwhzbdpcB86zIPYp4Cm51ndqBdlI_3XVHzVxwR2rxu7SBWU4B1oW8hjD9yBOIs_AS)
+![AWS IAM search](/images/post-rails-amazon-s3-setup/aws-iam-search.png)
 
 Navigate to 'Policies' on the side panel, and click 'Create policy'.
 
-![](https://lh3.googleusercontent.com/LXdWoNvHEgwDFpLnrB3P6OHRbJk2jvEr04nA3aUeETu7J1nvkhuVdKzeKz0KF1ro5vKQaBm9nUHcr2epbpMNy4YAG0Txv_6E6-ChopdNSABHWE32RyaXOYJQa9tlCjqdXjFtTPvP)
+![AWS create policy](/images/post-rails-amazon-s3-setup/aws-create-policy.png)
 
 In the "Create policy" section, you'll need to select a few options:
 
@@ -62,27 +62,27 @@ In the "Actions" section, you'll need to select 4 actions allowed in S3.
 
 -   DeleteObject
 
-![](https://lh3.googleusercontent.com/5YQSFAgQwGWJJF2jjt_bl9DCMQLO_6IMgj99pFNGLnTcz8n2cStFNrZ56yQsbWV6J2WP53TD1RvZ4gIEDWRaZr-bMOK95UIeV6l2Ge8cZFiDyfpG1w1W38WZYdT4V3vVQAbvRXM6)
+![AWS policy options](/images/post-rails-amazon-s3-setup/aws-policy-options.png)
 
 In the resources section, you want to select "Specific" resources for each action.
 
 For "Bucket" actions, you want to select "Add ARN"
 
-![](https://lh3.googleusercontent.com/wEWYgdmArehujR89iaSeXppxEKOQZpNu5zs73ny-35Dqne56LDVrgsmGWWVdXWrM14QOS4HTnnaf9N5foSDPVWmeZAeK8pUyklraJdgNoCC1jIHy-5WLilwizvguFz92clBk_K_D)
+![AWS policy options 2](/images/post-rails-amazon-s3-setup/aws-policy-options-2.png)
 
 And then type in the bucket name you just created, then click "Add".
 
-![](https://lh5.googleusercontent.com/YEmChelOV3r4p3ZFkvCIbkVxoPXnX2tMfduMW-zphfeU8sc3OIkKNnriQTb6pHGrXiVhv6Uwcx71S6bhA8nmI4bS5DUAJplR8ZTdHurfsBYx0gexCbhJiGGHgQ5alQF-1rt8Gqiq)
+![AWS policy ARN](/images/post-rails-amazon-s3-setup/aws-policy-arn.png)
 
 For the "Object" actions, you can just select "Any".
 
-![](https://lh3.googleusercontent.com/NUnoDIpF6UXW09d0L-n856QNiB0GETbXnvdn2Pa3a8iDhqpvLPqHbjR_oMYB-_pehoOolf7fGYcFt50CFoFlWdtalZOK8iZ36GERWXgxkggntzZlRf-FoEfRXM83wlL38ab5v6FY)
+![AWS policy ARN 2](/images/post-rails-amazon-s3-setup/aws-policy-arn-2.png)
 
 Click to the next page to add tags if you want, but you can just leave this blank (as I have).
 
 From the "Tags" page, click next to review the policy. All you need to do is add a name for the policy, and you're set! 
 
-![](https://lh4.googleusercontent.com/Id4F_RTllwNbDaE1tCHVmDZSABfyN8ea2suZT6SOyvXvdaV0Oul07TUGwg1VcnDX9BsWnnpLiaGSJ0YzLjPTLHvGr0OHkDnwDEGact8hqvYCmyptOWDuepbQ7T1L6XFBsHlBdh6v)
+![AWS policy review](/images/post-rails-amazon-s3-setup/aws-policy-review.png)
 
 Ok - now we have the policy, and we need to create a user to attach that policy to.
 
@@ -90,15 +90,15 @@ Ok - now we have the policy, and we need to create a user to attach that policy 
 
 Go back to the IAM panel and select "Users" from the side panel, and "Add user".
 
-![](https://lh5.googleusercontent.com/8a1RuslvpijKFJpPqmkJ5bwREmFg_yeX_O5NymZT1kl3e3KD2BrdxxUUIRLJBopVPbhvhkVKsU3uPHYz5jdMVwT2LE5b4tjeCvEr4RGniQ1QoSe7DcmjiniuLtN3QRc2wzGH8RfV)
+![AWS IAM create user](/images/post-rails-amazon-s3-setup/aws-iam-create-user.png)
 
 This "user" is actually your application, so you want to give them a name, and then select "Programmatic access". This will allow you to get the keys to enter in your application and access S3.
 
-![](https://lh4.googleusercontent.com/j3HbQGYuKeE07WvzL0wtWqlOYG_X9z2n70xZtplt_lSHNpejfr3--2UqOkrqPm_hln9TrLUYDKo7UguazkCT1vwD2FgbNMjY9R4g1LUqD8wgwgQm-kVkj058iDQWRCHdz2UhJgxn)
+![AWS add user](/images/post-rails-amazon-s3-setup/aws-add-user.png)
 
 Next, we want to attach our policy that we just created to this user. Select "Attach existing policies directly", and select your newly created policy.
 
-![](https://lh5.googleusercontent.com/TRY_U_lEqDMu7MHagl0XnJSpL25F5-8QMkU9M53Mk0vAQzbFCX9yZZFd-znW2VtWKWVQe5aF1eh7nBnN0yfNV6QLDoUUT3ELQydBtgmkMhGPovtyC_6bwoLtlP3qoOx9AQS7RSna)
+![AWS attach policy to user](/images/post-rails-amazon-s3-setup/aws-user-attach-policy.png)
 
 You can click next and add tags if you want, but again, you don't need to.
 
@@ -106,7 +106,7 @@ On the review page, you can click "Create user", which will take you through to 
 
 Note: you won't be able to access these keys again after you leave this page, so make sure you save them. You can do that by downloading them as a CSV, or simply writing them down (or adding them to your app).
 
-![](https://lh6.googleusercontent.com/GbXn9KEzrGQMK10tL9zqYp0E-3f6qBirTKTaruA7oR9CamhL3T3ZDGkOrEQT-AmwATMYwFRcYbHntM6XYqL84cAExh60rHVvqvJwq7MWI_ubxF3pCSjwn6Dar1NImAgIsQ2IZwVv)
+![AWS download user credentials](/images/post-rails-amazon-s3-setup/aws-user-credentials.png)
 
 And that's it as far as AWS is concerned, now we can move onto our application :)
 
@@ -231,11 +231,11 @@ To do this we just need to change a few settings in the "Permissions" tab of our
 
 So. Navigate to your bucket, and select the "Permissions" tab. In the "Block public access" section, choose to edit this section, and uncheck the "Block all public access" checkbox.
 
-![](https://lh3.googleusercontent.com/qGlaZgnWrrDhXnkHcYUyCJ_aB4Hs11CyXsSpg8EdAL4P7Lc7NBauc3vKqPlLZd6PpsZJSTm48XyRen_emijHLJpr3VZFYl-9JbIfp3RH5ylTd4V7ppqrFpdMjUMJ1jmuKe9OjNfn)
+![AWS public access](/images/post-rails-amazon-s3-setup/aws-public-access.png)
 
 Further down the Permissions page, you'll see a "Bucket Policy" section. You'll need to add this code:
 
-![](https://lh6.googleusercontent.com/57-39MCaHj2drl6ts5LSJDshHN5xoEhJjUibruLWBR8GnXPwO8V31QaSTdYng7oDczZNHTBxubhjCxtQJR6lAXv4yJQIPwVffT0h46uzacYs7p2LF8igeOrVQ-NxzJ0uqCIOi8Bg)
+![AWS public policy JSON](/images/post-rails-amazon-s3-setup/aws-json-policy.png)
 
 ```javascript
 {
@@ -256,7 +256,7 @@ Further down the Permissions page, you'll see a "Bucket Policy" section. You'll 
 
 Lastly, scroll down to "Access control list (ACL)". In the "Everyone (public access)" row, the Bucket ACL value should say "Read". This means that anyone who has one of your S3 links can access the file.
 
-![](https://lh3.googleusercontent.com/SXTQuEKIOl07P6I2yKgfvWyw1ctM3YPP2wZG_O_IEeWFtw-dqKlT4IH0XleGTRPwXGpeOFf-VZVuq2UCGagVAjxj05Nd9rD9H0-m24mkxe8QAEXG_G4iYHVL96Z7bQcRa7jZZSoK)
+![AWS public read](/images/post-rails-amazon-s3-setup/aws-public-read.png)
 
 If it does not say "Read" here, click Edit, and update this so that anyone with a link can access the file.
 
