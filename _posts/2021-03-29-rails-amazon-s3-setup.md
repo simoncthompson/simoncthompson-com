@@ -6,6 +6,8 @@ categories: saas
 permalink: /rails-amazon-s3-setup/
 ---
 
+# {{ page.title }}
+
 I recently found myself needing a fairly simple S3 setup so that users (and myself) could upload files to my Rails application.
 
 Most of the resources I found were either overly complicated, or skipped over crucial elements, or both.
@@ -13,8 +15,8 @@ Most of the resources I found were either overly complicated, or skipped over cr
 So I decided to write a simple guide to getting S3 set up in your Rails app. I hope you find it helpful!
 
 
-Setup the Amazon S3 bucket, user, and policy
---------------------------------------------
+## Setup the Amazon S3 bucket, user, and policy
+
 
 The first thing you'll need to do is [create an AWS account](https://aws.amazon.com/), if you haven't done so already. This is fairly straightforward so I won't cover it in this post. Once you've done that, we can start to create your S3 bucket.
 
@@ -110,8 +112,7 @@ Note: you won't be able to access these keys again after you leave this page, so
 
 And that's it as far as AWS is concerned, now we can move onto our application :)
 
-Install ActiveStorage
----------------------
+## Install ActiveStorage and setup S3 in Rails
 
 If you're not aware already, Active Storage is the Rails engine that facilitates uploading files to a cloud storage service (like AWS S3). It used to be a gem, but now is just included in Rails 5.2 and above - we just need to install it.
 
@@ -160,7 +161,6 @@ config.active_storage.service = :amazon
 ```
 
 We'll need to create an aws initialiser file to use S3 in your app:
-
 
 `touch config/initializers aws.rb`
 
@@ -222,8 +222,7 @@ And to display these images (or S3 files of any kind), you can call `.image` or 
 
 And there you have it. Simple S3 set up for Rails.
 
-[Optional] Making your S3 links publicly accessible outside of your Rails app
------------------------------------------------------------------------------
+## [Optional] Making your S3 links publicly accessible outside of your Rails app
 
 I mentioned that sometimes you may want to make your S3 links publicly accessible. For example, in my podcast hosting platform ([Incast.fm](http://incast.fm)), I need to expose S3 links in the RSS feeds we generate for users.
 
