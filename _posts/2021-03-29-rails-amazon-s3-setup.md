@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Setting up Rails and AWS S3 for file storage and user uploads"
+title:  "Setting up Amazon S3 in Rails for file storage and user uploads"
 date:   2021-03-29 14:00:00 +0800
 categories: saas
 permalink: /rails-amazon-s3-setup/
@@ -12,7 +12,7 @@ I recently found myself needing a fairly simple S3 setup so that users (and myse
 
 Most of the resources I found were either overly complicated, or skipped over crucial elements, or both.
 
-So I decided to write a simple guide to getting S3 set up in your Rails app. I hope you find it helpful!
+So I decided to write a simple, step-by-step guide to getting S3 set up in your Rails app. I hope you find it helpful!
 
 
 ## Setup the Amazon S3 bucket, user, and policy
@@ -194,13 +194,13 @@ Note: there are other ways to add credentials, but using a `.env` file is the si
 
 And then the last step is to update your model to allow it to accept files as attachments.
 
-Simply go the model in question, and add the following line to it:
+Simply go to the model in question, and add the following line to it:
 
 ```ruby
 has_one_attached :image
 ```
 
-`:image` can be anything - it's just a placeholder we'll use in our forms. If your working with audio, you could include `:audio` or `:podcast` - you can set the name to whatever you want, like a variable.
+`:image` can be anything - it's just a placeholder (variable) we'll use in our forms. If you're working with audio, you could include `:audio` or `:podcast` - you can set the name to whatever you want, like any other variable.
 
 You can also use `has_many_attached` if you want to attach multiple files to the instance of the model.
 
